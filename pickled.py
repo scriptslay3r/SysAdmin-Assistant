@@ -32,12 +32,15 @@ outputBox = Text(window)
 outputBox.grid(column=1,row=2)
 
 def clicked():
-
+    todoArray = ["Your ToDo List"]
     res = "Saved the following string --> " + txt.get()
-    save = txt.get() + " "
+    save = txt.get() + "\n"
     lbl.configure(text= res)
+    u = open('store.pckl', 'rb')
+    oldList = pickle.load(u)
+    updatedList = oldList + save
     f = open('store.pckl', 'wb')
-    pickle.dump(save, f)
+    pickle.dump(updatedList, f)
 
 def load():
 

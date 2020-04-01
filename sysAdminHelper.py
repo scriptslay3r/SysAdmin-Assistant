@@ -6,7 +6,7 @@ import shlex
 import tkinter.scrolledtext
 import re
 from tkinter import Tk
-import ToDo 
+
 
 
 """"
@@ -139,7 +139,7 @@ class StartPage(tk.Frame):
         systemInfoBtn = tk.Button(self, text = "Run sysinfo on a machine",
                     command=lambda: master.switch_frame(systemInfoPage))
         toDoBtn = tk.Button(self, text = "To Do List",
-                    command=lambda: exec(open("ToDo.py").read()))
+                    command=lambda: exec(open("ToDoList.py").read()))
         
         """running a command to get public IP address, and assigning it a variable"""
 
